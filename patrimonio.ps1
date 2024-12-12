@@ -56,7 +56,6 @@ $labelPatrimonio.Location = New-Object System.Drawing.Point(60, 50)
 $labelPatrimonio.Size = New-Object System.Drawing.Size(62,20)
 $form.Controls.Add($labelPatrimonio)
 
-<<<<<<< HEAD
 $obrigatorioPatri = New-Object System.Windows.Forms.Label
 $obrigatorioPatri.Text = "*"
 $obrigatorioPatri.AutoSize = $true
@@ -71,12 +70,10 @@ $txtPatrimonio = New-Object System.Windows.Forms.TextBox
 $txtPatrimonio.Font = $fonteTexto
 $txtPatrimonio.MaxLength = 7
 $txtPatrimonio.Location = New-Object System.Drawing.Point(200, 50)
-=======
 $txtPatrimonio = New-Object System.Windows.Forms.TextBox
 $txtPatrimonio.Font = $fonteTexto
 $txtPatrimonio.MaxLength = 7
 $txtPatrimonio.Location = New-Object System.Drawing.Point(190, 50)
->>>>>>> 7e3ab440133d3ff345759ca1e15ef67a7284eaa5
 $txtPatrimonio.Size = New-Object System.Drawing.Size(550,300)
 $form.Controls.Add($txtPatrimonio)
 # Evento KeyDown no primeiro TextBox para mover o foco após a leitura
@@ -105,7 +102,7 @@ $obrigatorioMarca.ForeColor = [System.Drawing.Color]::Red
 $obrigatorioMarca.Location = New-Object System.Drawing.Point(130, 100)
 $obrigatorioMarca.Size = New-Object System.Drawing.Size(40,20)
 $form.Controls.Add($obrigatorioMarca)
- 7e3ab440133d3ff345759ca1e15ef67a7284eaa5
+
 $marca = New-Object Windows.Forms.ComboBox
 $marca.Location = New-Object Drawing.Point(190, 100)
 $marca.Size = New-Object Drawing.Size(550, 300)
@@ -340,7 +337,7 @@ $form.Controls.Add($txtRamal)
 # Botão para salvar
 $btnSalvar = New-Object System.Windows.Forms.Button
 $btnSalvar.Text = "Salvar"
-$btnSalvar.Text = "Salvar em CSV"
+$btnSalvar.Text = "Salvar"
 $btnSalvar.AutoSize = $true
 $btnSalvar.Font = $fonteTexto
 #$btnSalvar.BackColor = [System.Drawing.Color]::White
@@ -814,8 +811,8 @@ $btnBuscar.Add_Click({
                 
                 #$msg = "Patrimônio: '$($linha.Patrimônio)',`nMarca: '$($linha.Marca)',`nModelo: '$($linha.Modelo)',`nNúmero de Série: '$($linha.Número_de_Série)',`nSituação: '$($linha.Situação)',`nDescrição: '$($linha.Descrição)',`nUsuário: '$($linha.Usuário)',`nSetor: '$($linha.Setor)',`nSala: '$($linha.Sala)',`nRamal: '$($linha.Ramal)',`nData de Cadastro: '$($linha.Data_de_Cadastro)'"
                 #[System.Windows.Forms.MessageBox]::Show($msg, "Patrimônio encontrado", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Information)
-                $msg = "Patrimônio: '$($linha.Patrimônio)',`nMarca: '$($linha.Marca)',`nModelo: '$($linha.Modelo)',`nNúmero de Série: '$($linha.Número_de_Série)',`nSituação: '$($linha.Situação)',`nDescrição: '$($linha.Descrição)',`nUsuário: '$($linha.Usuário)',`nSetor: '$($linha.Setor)',`nSala: '$($linha.Sala)',`nRamal: '$($linha.Ramal)',`nData de Cadastro: '$($linha.Data_de_Cadastro)'"
-                [System.Windows.Forms.MessageBox]::Show($msg, "Patrimônio encontrado", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Information)
+                #$msg = "Patrimônio: '$($linha.Patrimônio)',`nMarca: '$($linha.Marca)',`nModelo: '$($linha.Modelo)',`nNúmero de Série: '$($linha.Número_de_Série)',`nSituação: '$($linha.Situação)',`nDescrição: '$($linha.Descrição)',`nUsuário: '$($linha.Usuário)',`nSetor: '$($linha.Setor)',`nSala: '$($linha.Sala)',`nRamal: '$($linha.Ramal)',`nData de Cadastro: '$($linha.Data_de_Cadastro)'"
+                #[System.Windows.Forms.MessageBox]::Show($msg, "Patrimônio encontrado", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Information)
             } else {
                 [System.Windows.Forms.MessageBox]::Show("Nenhuma linha encontrada com o patrimônio: $busca")
             }
