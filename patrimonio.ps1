@@ -4,6 +4,7 @@ Add-Type -AssemblyName System.Drawing
 
 #=======================================================================================
 
+
 while($true){
 
 # Criando um formulário
@@ -55,6 +56,7 @@ $labelPatrimonio.Location = New-Object System.Drawing.Point(60, 50)
 $labelPatrimonio.Size = New-Object System.Drawing.Size(62,20)
 $form.Controls.Add($labelPatrimonio)
 
+<<<<<<< HEAD
 $obrigatorioPatri = New-Object System.Windows.Forms.Label
 $obrigatorioPatri.Text = "*"
 $obrigatorioPatri.AutoSize = $true
@@ -69,6 +71,12 @@ $txtPatrimonio = New-Object System.Windows.Forms.TextBox
 $txtPatrimonio.Font = $fonteTexto
 $txtPatrimonio.MaxLength = 7
 $txtPatrimonio.Location = New-Object System.Drawing.Point(200, 50)
+=======
+$txtPatrimonio = New-Object System.Windows.Forms.TextBox
+$txtPatrimonio.Font = $fonteTexto
+$txtPatrimonio.MaxLength = 7
+$txtPatrimonio.Location = New-Object System.Drawing.Point(190, 50)
+>>>>>>> 7e3ab440133d3ff345759ca1e15ef67a7284eaa5
 $txtPatrimonio.Size = New-Object System.Drawing.Size(550,300)
 $form.Controls.Add($txtPatrimonio)
 # Evento KeyDown no primeiro TextBox para mover o foco após a leitura
@@ -97,7 +105,7 @@ $obrigatorioMarca.ForeColor = [System.Drawing.Color]::Red
 $obrigatorioMarca.Location = New-Object System.Drawing.Point(130, 100)
 $obrigatorioMarca.Size = New-Object System.Drawing.Size(40,20)
 $form.Controls.Add($obrigatorioMarca)
-
+ 7e3ab440133d3ff345759ca1e15ef67a7284eaa5
 $marca = New-Object Windows.Forms.ComboBox
 $marca.Location = New-Object Drawing.Point(190, 100)
 $marca.Size = New-Object Drawing.Size(550, 300)
@@ -168,6 +176,7 @@ $form.Controls.Add($txtNumeroSerie)
 $txtNumeroSerie.Add_KeyDown({
     if ($_.KeyCode -eq [System.Windows.Forms.Keys]::Enter) {
         $situacao.Focus()
+        $txtSituacao.Focus()
     }
 })
 
@@ -200,6 +209,7 @@ $situacao.Font = $fonteTexto
 $situacao.Items.Add("Em uso")
 $situacao.Items.Add("Disponível")
 $situacao.Items.Add("Com defeito")
+$situacao.Items.Add("Com defeito/Quebrado")
 $situacao.Items.Add("Não localizado")
 
 $situacao.SelectedIndex = 0
@@ -241,7 +251,6 @@ $labelUsuario.Font = $fonteTexto
 $labelUsuario.Location = New-Object System.Drawing.Point(60, 350)
 $labelUsuario.Size = New-Object System.Drawing.Size(110,70)
 $form.Controls.Add($labelUsuario)
-
 $obrigatorioUsuario = New-Object System.Windows.Forms.Label
 $obrigatorioUsuario.Text = "*"
 $obrigatorioUsuario.AutoSize = $true
@@ -250,7 +259,6 @@ $obrigatorioUsuario.ForeColor = [System.Drawing.Color]::Red
 $obrigatorioUsuario.Location = New-Object System.Drawing.Point(145, 350)
 $obrigatorioUsuario.Size = New-Object System.Drawing.Size(40,20)
 $form.Controls.Add($obrigatorioUsuario)
-
 $txtUsuario = New-Object System.Windows.Forms.TextBox
 $txtUsuario.Font = $fonteTexto
 $txtUsuario.Location = New-Object System.Drawing.Point(190, 350)
@@ -332,6 +340,7 @@ $form.Controls.Add($txtRamal)
 # Botão para salvar
 $btnSalvar = New-Object System.Windows.Forms.Button
 $btnSalvar.Text = "Salvar"
+$btnSalvar.Text = "Salvar em CSV"
 $btnSalvar.AutoSize = $true
 $btnSalvar.Font = $fonteTexto
 #$btnSalvar.BackColor = [System.Drawing.Color]::White
@@ -363,6 +372,13 @@ $groupBox1.Controls.Add($obrigatorioMarca)
 $groupBox1.Controls.Add($marca)
 $groupBox1.Controls.Add($labelModelo)
 $groupBox1.Controls.Add($obrigatorioModelo)
+#==================================================================================
+
+$groupBox1.Controls.Add($labelPatrimonio)
+$groupBox1.Controls.Add($txtPatrimonio)
+$groupBox1.Controls.Add($labelMarca)
+$groupBox1.Controls.Add($marca)
+$groupBox1.Controls.Add($labelModelo)
 $groupBox1.Controls.Add($modelo)
 $groupBox1.Controls.Add($labelNumeroSerie)
 $groupBox1.Controls.Add($txtNumeroSerie)
@@ -380,6 +396,14 @@ $groupBox1.Controls.Add($obrigatorioSetor)
 $groupBox1.Controls.Add($txtSetor)
 $groupBox1.Controls.Add($labelSala)
 $groupBox1.Controls.Add($obrigatorioSala)
+$groupBox1.Controls.Add($situacao)
+$groupBox1.Controls.Add($labelDescricao)
+$groupBox1.Controls.Add($txtDescricao)
+$groupBox1.Controls.Add($labelUsuario)
+$groupBox1.Controls.Add($txtUsuario)
+$groupBox1.Controls.Add($labelSetor)
+$groupBox1.Controls.Add($txtSetor)
+$groupBox1.Controls.Add($labelSala)
 $groupBox1.Controls.Add($txtSala)
 $groupBox1.Controls.Add($labelRamal)
 $groupBox1.Controls.Add($txtRamal)
@@ -490,13 +514,12 @@ $btnSalvar.Add_Click({
     }
 })
 
-
-
 #==================================================================================
 
 
 $groupBox2 = New-Object System.Windows.Forms.GroupBox
 $groupBox2.Text = "Pesquisar Patrimônio"
+$groupBox2.Text = "Busca de Patrimônio"
 $groupBox2.Font = $fonteGroupBox
 #$groupBox2.BackColor = '#000000'
 #$groupBox2.ForeColor = [System.Drawing.Color]::White
@@ -524,6 +547,7 @@ $txtBusca.Add_KeyDown({
 # Criando o botão para realizar a busca
 $btnBuscar = New-Object System.Windows.Forms.Button
 $btnBuscar.Text = 'Pesquisar'
+$btnBuscar.Text = 'Buscar'
 $btnBuscar.Font = $fonteTexto
 #$btnBuscar.ForeColor = [System.Drawing.Color]::Black
 #$btnBuscar.BackColor = [System.Drawing.Color]::White
@@ -790,6 +814,8 @@ $btnBuscar.Add_Click({
                 
                 #$msg = "Patrimônio: '$($linha.Patrimônio)',`nMarca: '$($linha.Marca)',`nModelo: '$($linha.Modelo)',`nNúmero de Série: '$($linha.Número_de_Série)',`nSituação: '$($linha.Situação)',`nDescrição: '$($linha.Descrição)',`nUsuário: '$($linha.Usuário)',`nSetor: '$($linha.Setor)',`nSala: '$($linha.Sala)',`nRamal: '$($linha.Ramal)',`nData de Cadastro: '$($linha.Data_de_Cadastro)'"
                 #[System.Windows.Forms.MessageBox]::Show($msg, "Patrimônio encontrado", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Information)
+                $msg = "Patrimônio: '$($linha.Patrimônio)',`nMarca: '$($linha.Marca)',`nModelo: '$($linha.Modelo)',`nNúmero de Série: '$($linha.Número_de_Série)',`nSituação: '$($linha.Situação)',`nDescrição: '$($linha.Descrição)',`nUsuário: '$($linha.Usuário)',`nSetor: '$($linha.Setor)',`nSala: '$($linha.Sala)',`nRamal: '$($linha.Ramal)',`nData de Cadastro: '$($linha.Data_de_Cadastro)'"
+                [System.Windows.Forms.MessageBox]::Show($msg, "Patrimônio encontrado", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Information)
             } else {
                 [System.Windows.Forms.MessageBox]::Show("Nenhuma linha encontrada com o patrimônio: $busca")
             }
@@ -804,8 +830,6 @@ $btnBuscar.Add_Click({
 $linha | Format-List *
 
 #==================================================================================
-
-
 # Exibindo o formulário
 $form.Add_Shown({$form.Activate()})
 $resultPatrimonio = $form.ShowDialog()
