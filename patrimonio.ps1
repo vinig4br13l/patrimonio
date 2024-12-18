@@ -61,7 +61,7 @@ $obrigatorioPatri.Text = "*"
 $obrigatorioPatri.AutoSize = $true
 $obrigatorioPatri.Font = $fonteTexto
 $obrigatorioPatri.ForeColor = [System.Drawing.Color]::Red
-$obrigatorioPatri.Location = New-Object System.Drawing.Point(175, 50)
+$obrigatorioPatri.Location = New-Object System.Drawing.Point(172, 50)
 $obrigatorioPatri.Size = New-Object System.Drawing.Size(40,20)
 $form.Controls.Add($obrigatorioPatri)
 
@@ -112,7 +112,10 @@ $marca.Font = $fonteTexto
 $marca.Items.Add("Dell")
 $marca.Items.Add("HP")
 $marca.Items.Add("Lenovo")
+$marca.Items.Add("Panasonic")
 $marca.Items.Add("Samsung")
+$marca.Items.Add("Polycom")
+$marca.Items.Add("DATEN")
 
 # Definir uma opção selecionada por padrão (opcional)
 $marca.SelectedIndex = 0
@@ -145,10 +148,25 @@ $modelo.Location = New-Object Drawing.Point(190, 150)
 $modelo.Size = New-Object Drawing.Size(550, 300)
 $modelo.Font = $fonteTexto
 
+$modelo.Items.Add("OptiPlex 7000")
 $modelo.Items.Add("OptiPlex 7050")
-$modelo.Items.Add("Modelo B")
-$modelo.Items.Add("Modelo C")
-$modelo.Items.Add("Modelo D")
+$modelo.Items.Add("Precision T 5820")
+$modelo.Items.Add("Precision T 3620")
+$modelo.Items.Add("Precision 3660")
+$modelo.Items.Add("EliteDesk 800 G1 SFF")
+$modelo.Items.Add("Compaq Elite 8300 SFF")
+$modelo.Items.Add("Compaq 6005")
+$modelo.Items.Add("PREMIM PC")
+$modelo.Items.Add("DCSM")
+$modelo.Items.Add("Z820")
+$modelo.Items.Add("Z600")
+$modelo.Items.Add("Z620")
+$modelo.Items.Add("HDX 7000 HD")
+$modelo.Items.Add("Thinkpad l450")
+$modelo.Items.Add("CF-31 Toughbook")
+$modelo.Items.Add("Probook 4530s")
+$modelo.Items.Add("DCM2B-4")
+
 
 $modelo.SelectedIndex = 0
 $form.Controls.Add($modelo)
